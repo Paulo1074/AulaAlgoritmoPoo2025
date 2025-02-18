@@ -1,20 +1,18 @@
-﻿double x1, x2, y1, y2, d, p1, p2;   
-{ 
-    {
-        Console.Write("Digite x1: ");
-        x1 = int.Parse(Console.ReadLine());
+﻿Console.WriteLine("Digite um numero A:");
+int n1 = int.Parse(Console.ReadLine());
 
-        Console.Write("Digite x2: ");
-        y1 = int.Parse(Console.ReadLine());
+Console.WriteLine("Digite o segundo numero B:");
+int n2 = int.Parse(Console.ReadLine());
 
-        Console.Write("Digite y1: ");
-        x2 = int.Parse(Console.ReadLine());
+Console.WriteLine("Digite o terceiro numero C:");
+int n3 = int.Parse(Console.ReadLine());
 
-        Console.Write("Digite y2: ");
-        y2 = int.Parse(Console.ReadLine());
+int R = n1 + n2;
+int SomaR = R * R;
 
-        double distancia = Math.Sqrt(Math.Pow(x2 - x1, 2) + Math.Pow(y2 - y1, 2));
+int S = n2 + n3;
+int SomaS = S * S;
 
-        Console.WriteLine($"A distância entre os pontos ({x1}, {x2}) e ({y1}, {y2}) é: {distancia:F2}");
-    }
-}
+int SomaRS = (SomaR + SomaS) /2;
+Console.WriteLine(SomaRS);
+

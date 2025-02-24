@@ -1,18 +1,22 @@
-﻿Console.WriteLine("Digite um numero A:");
-int n1 = int.Parse(Console.ReadLine());
+﻿Console.Write("Digite o sexo (masculino/feminino): ");
+string sexo = Console.ReadLine().ToLower();
 
-Console.WriteLine("Digite o segundo numero B:");
-int n2 = int.Parse(Console.ReadLine());
+Console.Write("Digite a altura (em metros)");
+double altura = double.Parse(Console.ReadLine());
 
-Console.WriteLine("Digite o terceiro numero C:");
-int n3 = int.Parse(Console.ReadLine());
+double pesoIdeal;
+if (sexo == "masculino")
+{
+    pesoIdeal = (72.7 * altura) - 58;
+}
+else if (sexo == "feminino")
+{
+    pesoIdeal = (62.1 * altura) - 44.7;
+}
+else
+{
+    Console.WriteLine("Sexo inválido");
+    return;
+}
 
-int R = n1 + n2;
-int SomaR = R * R;
-
-int S = n2 + n3;
-int SomaS = S * S;
-
-int SomaRS = (SomaR + SomaS) /2;
-Console.WriteLine(SomaRS);
-
+Console.WriteLine($"o peso ideal é {pesoIdeal} kg");

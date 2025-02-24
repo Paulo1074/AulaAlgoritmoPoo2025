@@ -1,22 +1,43 @@
-﻿Console.Write("Digite o sexo (masculino/feminino): ");
-string sexo = Console.ReadLine().ToLower();
+﻿    {
+        Console.WriteLine("Digite um número de 1 a 7:");
+        int numero;
+        if (int.TryParse(Console.ReadLine(), out numero))
+        {
+            string diaSemana = "";
 
-Console.Write("Digite a altura (em metros)");
-double altura = double.Parse(Console.ReadLine());
+            switch (numero)
+            {
+                case 1:
+                    diaSemana = "Domingo";
+                    break;
+                case 2:
+                    diaSemana = "Segunda-feira";
+                    break;
+                case 3:
+                    diaSemana = "Terça-feira";
+                    break;
+                case 4:
+                    diaSemana = "Quarta-feira";
+                    break;
+                case 5:
+                    diaSemana = "Quinta-feira";
+                    break;
+                case 6:
+                    diaSemana = "Sexta-feira";
+                    break;
+                case 7:
+                    diaSemana = "Sábado";
+                    break;
+                default:
+                    diaSemana = "Número inválido. Escolha entre 1 e 7.";
+                    break;
+            }
 
-double pesoIdeal;
-if (sexo == "masculino")
-{
-    pesoIdeal = (72.7 * altura) - 58;
-}
-else if (sexo == "feminino")
-{
-    pesoIdeal = (62.1 * altura) - 44.7;
-}
-else
-{
-    Console.WriteLine("Sexo inválido");
-    return;
-}
+            Console.WriteLine("O dia correspondente é: " + diaSemana);
+        }
+        else
+        {
+            Console.WriteLine("Entrada inválida. Digite um número inteiro entre 1 e 7.");
+        }
+    }
 
-Console.WriteLine($"o peso ideal é {pesoIdeal} kg");

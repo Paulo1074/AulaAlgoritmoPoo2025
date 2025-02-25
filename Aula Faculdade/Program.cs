@@ -1,43 +1,29 @@
-﻿    {
-        Console.WriteLine("Digite um número de 1 a 7:");
-        int numero;
-        if (int.TryParse(Console.ReadLine(), out numero))
-        {
-            string diaSemana = "";
+﻿using System;
+class program
+{
+    static void Main()
+    { 
+    Console.WriteLine("Digite o número de horas trabalhadas: ");
+    double horastrabalhadas = Convert.ToDouble(Console.ReadLine());
 
-            switch (numero)
-            {
-                case 1:
-                    diaSemana = "Domingo";
-                    break;
-                case 2:
-                    diaSemana = "Segunda-feira";
-                    break;
-                case 3:
-                    diaSemana = "Terça-feira";
-                    break;
-                case 4:
-                    diaSemana = "Quarta-feira";
-                    break;
-                case 5:
-                    diaSemana = "Quinta-feira";
-                    break;
-                case 6:
-                    diaSemana = "Sexta-feira";
-                    break;
-                case 7:
-                    diaSemana = "Sábado";
-                    break;
-                default:
-                    diaSemana = "Número inválido. Escolha entre 1 e 7.";
-                    break;
-            }
+    Console.WriteLine("Digite o salário por  hora: ");
+    double salárioporhora = Convert.ToDouble(Console.ReadLine());
 
-            Console.WriteLine("O dia correspondente é: " + diaSemana);
-        }
-        else
-        {
-            Console.WriteLine("Entrada inválida. Digite um número inteiro entre 1 e 7.");
-        }
+    int horasmensais = 40 * 4; // 160 horas mês
+        double salarioTotal = 0;
+
+        if (horastrabalhadas > horasmensais)
+    {
+        double horasextras = horastrabalhadas - horasmensais;
+        double valorHoraExtra = salárioporhora * 1.5; //50% a mais
+
+        salarioTotal = (horasmensais * salárioporhora) + (horasextras * valorHoraExtra);
     }
+    else
+    {
+        salarioTotal = horastrabalhadas * salárioporhora;
 
+    }
+        Console.WriteLine($"O salário total do funcionário é: R$ {salarioTotal:F2}");
+    }
+}
